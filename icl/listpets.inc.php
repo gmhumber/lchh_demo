@@ -13,7 +13,10 @@ function listpets(){
 		$petname=htmlentities($myrow['petname']);
 		//$pettype=htmlentities($myrow['pettype']);
 	
-        $gskey = emitgskey("deletepet_$petid");
+        // The output from emitgskey() is echoed directly to screen which is not the desired behaviour for this code. Therefore, ob_start() and ob_get_clean() is used to capture the echoed output in a buffer and then assign it to a variable for further processing.
+        ob_start();
+        emitgskey("deletepet_$petid");
+        $gskey = ob_get_clean();
 
         $output .= <<<ROWDATA
             <div>

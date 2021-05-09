@@ -17,8 +17,8 @@ function makegskey($verb){
 }
 
 function emitgskey($verb,$groupnames=''){
-	//echo makegskey($verb,$groupnames);
-	return makegskey($verb,$groupnames);	
+	echo makegskey($verb,$groupnames);
+	//return makegskey($verb,$groupnames);	
 }
 
 function checkgskey($verb){
